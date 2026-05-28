@@ -15,10 +15,10 @@ router.get('/search', async (req, res, next) => {
       where: {
         isActive: true,
         OR: [
-          { nameEn: { contains: String(q), mode: 'insensitive' } },
-          { nameHi: { contains: String(q), mode: 'insensitive' } },
-          { descriptionEn: { contains: String(q), mode: 'insensitive' } },
-          { descriptionHi: { contains: String(q), mode: 'insensitive' } }
+          { nameEn: { contains: String(q) } },
+          { nameHi: { contains: String(q) } },
+          { descriptionEn: { contains: String(q) } },
+          { descriptionHi: { contains: String(q) } }
         ]
       },
       take: 10

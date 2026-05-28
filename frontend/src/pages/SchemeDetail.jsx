@@ -50,8 +50,9 @@ export default function SchemeDetail() {
   }, [id]);
 
   useEffect(() => {
+    let map;
     if (!loading && scheme && mapRef.current && !mapRef.current._leaflet_id) {
-      const map = L.map(mapRef.current).setView([22.5937, 78.9629], 4);
+      map = L.map(mapRef.current).setView([22.5937, 78.9629], 4);
       L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '&copy; OpenStreetMap contributors'
       }).addTo(map);
@@ -60,6 +61,11 @@ export default function SchemeDetail() {
         L.marker([csc.lat, csc.lng]).addTo(map).bindPopup(csc.name);
       });
     }
+    return () => {
+      if (map) {
+        map.remove();
+      }
+    };
   }, [loading, scheme]);
 
   if (loading) {

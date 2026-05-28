@@ -1,0 +1,51 @@
+{
+  "appName": "Kisan Saathi",
+  "nav": {
+    "home": "Home",
+    "about": "About"
+  },
+  "home": {
+    "title": "Find Government Schemes For You",
+    "subtitle": "Answer 5 simple questions to discover agricultural schemes, benefits, and how to apply.",
+    "cta": "Check My Eligibility →",
+    "stat1Title": "50+",
+    "stat1Desc": "Active Schemes",
+    "stat2Title": "₹2L Cr",
+    "stat2Desc": "Benefits Available",
+    "stat3Title": "14 Cr",
+    "stat3Desc": "Farmers Covered",
+    "howItWorks": "How it works",
+    "step1": "Fill Details",
+    "step2": "Find Matches",
+    "step3": "Apply Easily"
+  },
+  "wizard": {
+    "back": "Back",
+    "next": "Next",
+    "finish": "View Results",
+    "step1Title": "Select Your State",
+    "step2Title": "Select Crop Type",
+    "step3Title": "Land Size (in Acres)",
+    "step4Title": "Annual Family Income (₹)",
+    "step5Title": "Land Ownership"
+  },
+  "results": {
+    "title": "You qualify for {{count}} schemes",
+    "noResults": "No schemes found. Try widening your criteria.",
+    "shareAll": "Share all on WhatsApp",
+    "downloadPdf": "Download full report PDF",
+    "startOver": "Start over"
+  },
+  "scheme": {
+    "viewDetails": "View Details",
+    "share": "Share",
+    "applyOnline": "Apply Online",
+    "documents": "Required Documents",
+    "steps": "Application Steps",
+    "amount": "Benefit Amount",
+    "match": "Match"
+  },
+  "offline": "Offline! Showing cached information.",
+  "error": "Something went wrong.",
+  "retry": "Retry"
+}

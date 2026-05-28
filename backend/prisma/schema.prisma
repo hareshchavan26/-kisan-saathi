@@ -1,0 +1,68 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+model Scheme {
+  id              String   @id @default(cuid())
+  nameEn          String
+  nameHi          String
+  descriptionEn   String
+  descriptionHi   String
+  ministryEn      String
+  ministryHi      String
+  benefitEn       String
+  benefitHi       String
+  benefitAmount   String
+  applicationUrl  String?
+  deadline        String?
+  isActive        Boolean  @default(true)
+  createdAt       DateTime @default(now())
+  eligibilityRules EligibilityRule[]
+  documents       Document[]
+  applicationSteps ApplicationStep[]
+}
+
+model EligibilityRule {
+  id          String  @id @default(cuid())
+  schemeId    String
+  scheme      Scheme  @relation(fields: [schemeId], references: [id])
+  field       String  // "state", "cropType", "landSize", "annualIncome", "landOwnership"
+  operator    String  // "equals", "in", "lte", "gte", "any"
+  value       String  // JSON stringified value
+}
+
+model Document {
+  id          String @id @default(cuid())
+  schemeId    String
+  scheme      Scheme @relation(fields: [schemeId], references: [id])
+  nameEn      String
+  nameHi      String
+  isRequired  Boolean @default(true)
+}
+
+model ApplicationStep {
+  id          String @id @default(cuid())
+  schemeId    String
+  scheme      Scheme @relation(fields: [schemeId], references: [id])
+  stepNumber  Int
+  titleEn     String
+  titleHi     String
+  descEn      String
+  descHi      String
+}
+
+model SearchLog {
+  id            String   @id @default(cuid())
+  state         String
+  cropType      String
+  landSize      Float
+  annualIncome  Float
+  landOwnership String
+  matchedCount  Int
+  createdAt     DateTime @default(now())
+}

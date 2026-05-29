@@ -17,11 +17,14 @@ L.Icon.Default.mergeOptions({
 });
 
 const STATIC_CSC = [
-  { lat: 28.6014, lng: 76.9859, name: "Krishi Vigyan Kendra (KVK), Ujwa, New Delhi" },
-  { lat: 26.8926, lng: 80.9701, name: "CSC Center - Block Development Office, Lucknow" },
-  { lat: 18.5308, lng: 73.8471, name: "District Agriculture Office, Shivaji Nagar, Pune" },
-  { lat: 13.0674, lng: 80.2376, name: "Farmer Help Center, Egmore, Chennai" },
-  { lat: 23.2332, lng: 77.4343, name: "CSC - MP State Agro Industries, Bhopal" },
+  { lat: 28.6139, lng: 77.2090, name: "Municipal Corporation of Delhi (MCD) HQ, Civic Centre, New Delhi" },
+  { lat: 18.9401, lng: 72.8347, name: "Brihanmumbai Municipal Corporation (BMC) HQ, Fort, Mumbai" },
+  { lat: 18.5204, lng: 73.8567, name: "Pune Municipal Corporation (PMC) Office, Shivaji Nagar, Pune" },
+  { lat: 26.8467, lng: 80.9462, name: "Lucknow Municipal Corporation (Nagar Nigam), Lalbagh, Lucknow" },
+  { lat: 13.0827, lng: 80.2707, name: "Greater Chennai Corporation (GCC) HQ, Ripon Building, Chennai" },
+  { lat: 23.2599, lng: 77.4126, name: "Bhopal Municipal Corporation (BMC) Office, Bhopal" },
+  { lat: 23.0225, lng: 72.5714, name: "Ahmedabad Municipal Corporation (AMC) Office, Ahmedabad" },
+  { lat: 22.5726, lng: 88.3639, name: "Kolkata Municipal Corporation (KMC) HQ, Kolkata" },
 ];
 
 export default function SchemeDetail() {
@@ -161,9 +164,9 @@ export default function SchemeDetail() {
 
       <div className="bg-white rounded-3xl p-6 md:p-8 shadow-sm border mb-8 no-print">
         <h3 className="text-2xl font-bold mb-6 flex items-center gap-2">
-          <MapPin className="text-secondary" /> Common Service Centers
+          <MapPin className="text-secondary" /> {isHindi ? "शहरी स्थानीय निकाय (ULB) और सहायता केंद्र" : "Urban Local Bodies (ULBs) & Help Centers"}
         </h3>
-        <p className="text-gray-600 mb-4">Find your nearest help center to apply offline.</p>
+        <p className="text-gray-600 mb-4">{isHindi ? "ऑफ़लाइन आवेदन करने के लिए अपने निकटतम शहरी निकाय या सहायता केंद्र का पता लगाएं।" : "Find your nearest urban local body office or help center to apply offline."}</p>
         <div ref={mapRef} className="w-full h-[400px] rounded-2xl border-2 border-gray-200 z-0"></div>
       </div>
 
